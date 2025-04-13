@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #gameCanvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        #score {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        #startScreen, #gameOverScreen {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            width: 400px;
+            height: 400px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #gameOverScreen {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="score">分数: 0</div>
+    <div id="gameContainer" style="position: relative;">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="startScreen">
+            <h1>贪吃蛇</h1>
+            <button class="button" onclick="startGame()">开始游戏</button>
+        </div>
+        <div id="gameOverScreen">
+            <h1>游戏结束</h1>
+            <p id="finalScore">最终分数: 0</p>
+            <button class="button" onclick="restartGame()">重新开始</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
